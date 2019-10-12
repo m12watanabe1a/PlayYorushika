@@ -28,7 +28,7 @@ if [ $amy_len -eq $elma_len ] && [ $amy_len -gt 0 ]; then
         fi
 
 
-        echo -e "amy: \t" ${amy_list[$p]/**\\ /} | sed 's/\.[^\.]*$//'
+        echo -e "amy: \t"${amy_list[$p]/**\\ /} | sed 's/\.[^\.]*$//'
         $(echo "${amy_path}/${amy_list[$p]}" | xargs afplay)
 
         echo -e "elma:\t"${elma_list[$p]/**\\ /} | sed 's/\.[^\.]*$//'

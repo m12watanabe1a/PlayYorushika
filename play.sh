@@ -10,7 +10,7 @@ elma_path=($(find ~/Music -type d -name エルマ -print0 | xargs -0 ls -v1dn1 |
 elma_list=($(find ~/Music -type d -name エルマ -print0 | xargs -0 ls -v1 | sed 's/ /\\ /g'))
 elma_len=(${#elma_list[@]})
 
-if [ $elma_len -eq $amy_len ]; then
+if [ $amy_len -eq $elma_len ] && [ $amy_len -gt 0 ]; then
     END=$(expr $amy_len - 1)
     for ((i=0;i<=$END;i++)); do
 
@@ -22,6 +22,6 @@ if [ $elma_len -eq $amy_len ]; then
 
     done
 else
-    echo "The number of list is not the same"
+    echo "No valid music files"
 fi
 IFS=$IFS_BACKUP

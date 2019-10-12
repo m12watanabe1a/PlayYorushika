@@ -11,12 +11,14 @@ done
 IFS_BACKUP=$IFS
 IFS=$'\n'
 
-amy_path=($(find ~/Music -type d -name だから僕は音楽を辞めた -print0 | xargs -0 ls -v1dn1 | sed 's/ /\\ /g'))
-amy_list=($(find ~/Music -type d -name だから僕は音楽を辞めた -print0 | xargs -0 ls -v1 | sed 's/ /\\ /g'))
+amy_title="だから僕は音楽を辞めた"
+amy_path=($(find ~/Music -type d -name ${amy_title} -print0 | xargs -0 ls -v1dn1 | sed 's/ /\\ /g'))
+amy_list=($(find ~/Music -type d -name ${amy_title} -print0 | xargs -0 ls -v1 | sed 's/ /\\ /g'))
 amy_len=(${#amy_list[@]})
 
-elma_path=($(find ~/Music -type d -name エルマ -print0 | xargs -0 ls -v1dn1 | sed 's/ /\\ /g'))
-elma_list=($(find ~/Music -type d -name エルマ -print0 | xargs -0 ls -v1 | sed 's/ /\\ /g'))
+elma_title="エルマ"
+elma_path=($(find ~/Music -type d -name ${elma_title} -print0 | xargs -0 ls -v1dn1 | sed 's/ /\\ /g'))
+elma_list=($(find ~/Music -type d -name ${elma_title} -print0 | xargs -0 ls -v1 | sed 's/ /\\ /g'))
 elma_len=(${#elma_list[@]})
 
 if [ $amy_len -eq $elma_len ] && [ $amy_len -gt 0 ]; then

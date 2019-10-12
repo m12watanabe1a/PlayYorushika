@@ -5,6 +5,7 @@
 リポジトリをクローンしてから
 ```
 $ git clone https://github.com/m12watanabe1a/PlayYorushika.git
+$ cd PlayYorushika
 ```
 
 実行権限を追加して
